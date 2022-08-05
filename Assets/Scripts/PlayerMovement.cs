@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DialogueEditor;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -17,10 +18,14 @@ public class PlayerMovement : MonoBehaviour
     private bool groundedPlayer;
 
     public GameObject inGameMenu;
+
+    public NPCConversation convo;
+
     void Start()
     {
         controller = this.GetComponent<CharacterController>();
         anim = this.gameObject.GetComponent<Animator>();
+        ConversationManager.Instance.StartConversation(convo);
     }
 
     void Update()
