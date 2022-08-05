@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using DialogueEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,8 @@ public class scareManager : MonoBehaviour
     public TextMeshProUGUI scareText;
 
     private AudioSource audioSrc;
+
+    public NPCConversation convo;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,7 @@ public class scareManager : MonoBehaviour
             scareText.text = "" + scareVal;
             Destroy(other.gameObject);
             audioSrc.Play();
+            ConversationManager.Instance.StartConversation(convo);
         }
     }
 }
