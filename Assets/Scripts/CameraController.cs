@@ -10,7 +10,8 @@ public class CameraController : MonoBehaviour
     private float xRotationCamera = 0f;
 
     void Start()
-    {}
+    {
+    }
 
     void Update()
     {
